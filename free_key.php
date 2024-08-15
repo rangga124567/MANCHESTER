@@ -4,25 +4,26 @@ session_start();
 // database connection
 include 'auth.php';
 // create function for generate random password
-function generate_username($len = 20){
+function generate_username($len = 15){
  $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
  $username = substr( str_shuffle( $chars ), 0, $len );
  return $username;
 }
-function generate_password($len = 20){
+
+function generate_password($len = 15){
  $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
  $password = substr( str_shuffle( $chars ), 0, $len );
  return $password;
 }
-
+ 
 // insert into database
 if(isset($_SESSION['signup'])) {
 session_destroy();
  $username = generate_username();
  $password = generate_password();
-
- mysqli_query($conn, "insert into tmhs values('$username','$password','1','0000-00-00 00:00:00','1','1')");
  
+
+ mysqli_query($conn, "insert into freekey values('$username','$password','1','0000-00-00 00:00:00','1')");
  echo '<!DOCTYPE html>
 
 <html>
@@ -185,7 +186,7 @@ function copyUsername() {
 
     <h2>MANCHESTER</h2>
 
-    <p></p>
+    <p>FREE KEY 5 HOURS</p>
 
     </center>
 
@@ -193,9 +194,9 @@ function copyUsername() {
 
 
 
-    <label for="Username"><b>Username</b></label>
+    <label for="Username"><b>Username and Password</b></label>
 
-    <input type="text" id="Username" value= ' . $username . ":" . $password .' required>
+    <input type="text" id="Username" value= ' . $username . ':' . $password . ' required>
 
     <button type="submit" class="button1" onclick="copyUsername()">COPY USERNAME</button>
 
