@@ -154,8 +154,8 @@ a {
 
     <label for="SelectInfo"><b>Select one</b></label>
     
-    <button type="submit" class="button1" onclick="window.location.href='redirect.php'">Get Free Key</button>
-    <button type="submit" class="button1" onclick="window.location.href='https://t.me/MANCHESTER1bot'">Get Paid Key</button>
+    <button type="submit" class="button1" onclick="window.location.href='https://sfl.gl/nCxZ78Q'">Get Free Key</button>
+    <button type="submit" class="button1" onclick="window.location.href='https://sfl.gl/nCxZ78Q'">Get Paid Key</button>
     <br>
 
     <br>
